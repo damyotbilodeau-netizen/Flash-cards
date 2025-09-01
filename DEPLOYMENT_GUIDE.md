@@ -77,19 +77,51 @@ This script is the "brain" of your application.
 5.  Google will ask you to authorize the script. Click **`Authorize access`**, choose your Google account, and click **`Allow`** (you may need to click "Advanced" and "Go to ... (unsafe)").
 6.  After a moment, a `Deployment successfully updated` box will appear. **Copy the Web app URL.** This is your `SCRIPT_URL`.
 
-## Part 3: Configure and Deploy the Frontend
+## Part 3: Deploy the Frontend to Firebase
 
-This is the user interface you will interact with. We will use Firebase for free, reliable hosting.
+This is the final step! We will publish the web application to the internet using Firebase, which is free and reliable.
 
-### 3.1. Provide Your URLs
-**This is the only step where you need to provide information back to me.** I need the two URLs you just copied:
-*   The `QUIZ_SHEET_CSV_URL` from Part 1.4.
-*   The `SCRIPT_URL` from Part 2.2.
+### 3.1. Download the Code
+First, you need to download all the application code from this repository. Look for a "Code" button, click it, and select "Download ZIP". Unzip the file on your computer.
 
-Please provide them to me, and I will update the frontend code for you.
+### 3.2. Install Required Tools
+You only need to do this once. If you've ever done web development before, you may already have these.
+1.  **Install Node.js:** Go to the [official Node.js website](https://nodejs.org/) and download the "LTS" version. Run the installer and accept the default options.
+2.  **Open a Terminal (Command Prompt):**
+    *   **Windows:** Press the Windows key, type `cmd`, and press Enter.
+    *   **Mac:** Open the Spotlight search (Cmd+Space), type `Terminal`, and press Enter.
+3.  **Install Firebase Tools:** In the terminal window you just opened, type the following command and press Enter:
+    ```bash
+    npm install -g firebase-tools
+    ```
+    Wait for it to finish installing.
 
-### 3.2. Deploy to Firebase (After I update the code)
-*(I will provide instructions for this part after you give me the URLs and I have updated the `script.js` file.)*
+### 3.3. Deploy the App
+1.  **Login to Firebase:** In the same terminal window, type this command and press Enter. It will open a browser window for you to log in to your Google account.
+    ```bash
+    firebase login
+    ```
+2.  **Navigate to the Code Directory:** In the terminal, you need to move into the folder you unzipped earlier.
+    *   Type `cd ` (with a space after it).
+    *   Drag the unzipped project folder from your file explorer directly into the terminal window. The path to the folder should appear.
+    *   Press Enter.
+3.  **Initialize Firebase:** Now, type this command and press Enter:
+    ```bash
+    firebase init
+    ```
+    This will ask you a series of questions. Use the arrow keys and Enter key to answer them.
+    *   `Are you ready to proceed?` -> **Yes**
+    *   `Which Firebase features do you want to set up?` -> Select **Hosting: Configure files for Firebase Hosting...** (press Space to select, then Enter).
+    *   `Please select an option:` -> Select **Use an existing project**.
+    *   `Select a default Firebase project for this directory:` -> Select the Firebase project you created when you first started.
+    *   `What do you want to use as your public directory?` -> **IMPORTANT:** Type `frontend` and press Enter.
+    *   `Configure as a single-page app (rewrite all urls to /index.html)?` -> **No**
+    *   `Set up automatic builds and deploys with GitHub?` -> **No**
+4.  **Deploy!** Finally, type this command and press Enter:
+    ```bash
+    firebase deploy
+    ```
+    After a minute, it will show you a **Hosting URL**. This is the live link to your flashcard application! You can visit it in your browser.
 
 ## Part 4: Set Up Daily Email Reminders
 
@@ -108,4 +140,4 @@ This creates a trigger that will automatically run the script to send you an ema
 
 ---
 
-And that's it! Once you've completed these steps (especially providing me with the URLs in Part 3.1), your app will be ready to go.
+And that's it! Your application is now fully configured and deployed. Visit your Hosting URL to start using it.

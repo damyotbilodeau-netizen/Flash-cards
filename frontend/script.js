@@ -5,10 +5,10 @@
 // =================================================================================
 
 // 1. The URL of your deployed Google Apps Script.
-const SCRIPT_URL = "YOUR_APPS_SCRIPT_URL_HERE";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby8W9kNoFnhNeE1rlP2YER_9vPfkoJqsodPm30_vfU9arEq57JDYmtwCuwVMlqbTMLH/exec";
 
 // 2. The "Publish to the web" CSV URL of your "Flash-cards" sheet.
-const QUIZ_SHEET_CSV_URL = "YOUR_GOOGLE_SHEET_CSV_URL_HERE";
+const QUIZ_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQS6PTeNR_SoAbQgKwkSFTpB5vJ0JPzHujVJOB5VH-phfKt6DojHSpLbRMsUVKKWZ9wGY2qFJEkv7ff/pub?output=csv";
 
 // =================================================================================
 // APPLICATION LOGIC
